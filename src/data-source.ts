@@ -10,9 +10,11 @@ export const AppDataSource = new DataSource({
     username: "root",
     password: "123456",
     database: "study",
+    // synchronize 的话，会同步创建表。
     synchronize: true,
-    logging: false,
-    entities: [User,Student],
+    logging: true,
+    // entities: [User,Student],
+    entities:["./**/entity/*.ts"],
     migrations: [],
     subscribers: [],
 })
